@@ -67,7 +67,6 @@ const CalculationPremium = () => {
   const dispatch = useDispatch();
 
   const calculated = useSelector(state => state.selected.calculated);
-  console.log(calculated);
 
   const {
     genderCd,
@@ -91,14 +90,13 @@ const CalculationPremium = () => {
       .post('getProduct', values)
       .then(res => {
         setLoading(false);
-        console.log(res.data);
+
         dispatch(selectCalculation({ calterm: values, result: res.data }));
         dispatch(createHistory({ calterm: values, result: res.data }));
         navigate('/app/display');
       })
       .catch(err => {
         setLoading(false);
-        console.log(err.message);
       });
   };
 
@@ -139,10 +137,7 @@ const CalculationPremium = () => {
               })}
               onSubmit={async (values, { resetForm }) => {
                 setLoading(true);
-                console.log({
-                  ...values,
-                  dob: moment(selectedDate).format('YYYY-MM-DD')
-                });
+
                 handleCalculation({
                   ...values,
                   dob: moment(selectedDate).format('YYYY-MM-DD')

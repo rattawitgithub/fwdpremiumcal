@@ -36,7 +36,6 @@ const CalculationDisplay = () => {
   const navigate = useNavigate();
 
   const calculated = useSelector(state => state.selected.calculated);
-  console.log(calculated.result.quotationProductList);
 
   return (
     <Page className={classes.root} title="Calculation">
