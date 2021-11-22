@@ -42,8 +42,8 @@ const History = () => {
   }, []);
 
   const history = useSelector(state => Object.values(state.history));
-  const currentUserId = useSelector(state => state.auth.userId);
-  const isSignedIn = useSelector(state => state.auth.isSignedIn);
+  // const currentUserId = useSelector(state => state.auth.userId);
+  // const isSignedIn = useSelector(state => state.auth.isSignedIn);
 
   return (
     <Page className={classes.root} title="Calculation">
@@ -70,6 +70,30 @@ const History = () => {
 
                 return (
                   <React.Fragment key={row.id}>
+                    <ListItem alignItems="flex-start">
+                      <ListItemText
+                        primary={
+                          <Typography
+                            sx={{ display: 'inline' }}
+                            component="span"
+                            variant="body2"
+                            color="textPrimary"
+                          >
+                            คำนวณโดย :{' '}
+                          </Typography>
+                        }
+                        secondary={
+                          <Typography
+                            sx={{ display: 'inline' }}
+                            component="span"
+                            variant="body2"
+                            color="textSecondary"
+                          >
+                            {row.userId ? row.userId : 'ไม่ระบุ'}
+                          </Typography>
+                        }
+                      />
+                    </ListItem>
                     <ListItem alignItems="flex-start">
                       <ListItemText
                         primary={

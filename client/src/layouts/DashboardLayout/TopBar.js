@@ -11,8 +11,8 @@ import {
   makeStyles
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
-import InputIcon from '@material-ui/icons/Input';
+// import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
+// import InputIcon from '@material-ui/icons/Input';
 import GoogleAuth from 'src/components/GoogleAuth';
 
 const useStyles = makeStyles(() => ({
@@ -39,12 +39,10 @@ const TopBar = ({ className, onMobileNavOpen, ...rest }) => {
               color="primary"
               variant="dot"
             >
-              <NotificationsIcon />
+              {/* <NotificationsIcon /> */}
             </Badge>
           </IconButton>
-          <IconButton color="inherit">
-            <InputIcon />
-          </IconButton>
+          <IconButton color="inherit">{/* <InputIcon /> */}</IconButton>
         </Hidden>
         <Hidden lgUp>
           <IconButton color="inherit" onClick={onMobileNavOpen}>
